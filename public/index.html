@@ -26,7 +26,8 @@
             </h1>
          </header>
          <main class="join-main">
-            <form action="chat.html">
+            <form action="chat.html" method="GET">
+               <!-- Username -->
                <div class="form-control">
                   <label style="color: #f5f6f7" for="username">Username</label>
                   <input
@@ -37,9 +38,12 @@
                      required
                   />
                </div>
+
+               <!-- Predefined Rooms -->
                <div class="form-control">
-                  <label style="color: #f5f6f7" for="room">Select Room</label>
+                  <label style="color: #f5f6f7" for="room">Choose a Room</label>
                   <select name="room" id="room">
+                     <option value="">-- Select a predefined room --</option>
                      <option value="Room-1">Room-1</option>
                      <option value="Room-2">Room-2</option>
                      <option value="Room-3">Room-3</option>
@@ -47,6 +51,18 @@
                      <option value="Room-5">Room-5</option>
                   </select>
                </div>
+
+               <!-- Custom Room -->
+               <div class="form-control">
+                  <label style="color: #f5f6f7" for="customRoom">Or Create / Join Custom Room</label>
+                  <input
+                     type="text"
+                     name="customRoom"
+                     id="customRoom"
+                     placeholder="Enter custom room name..."
+                  />
+               </div>
+
                <button type="submit" class="btn">Join Chat</button>
             </form>
          </main>
