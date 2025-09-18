@@ -49,8 +49,14 @@ io.on('connection', (socket) => {
    socket.on('chatMessage', (msg) => {
       const user = getCurrentUser(socket.id);
 
+      if (!user) {
+         console.warn(`⚠️ No user found for socket ${socket.id}`);
+         return;
+      }
+
       io.to(user.room).emit('message', formatMessage(user.username, msg));
    });
+
 
    // runs when clients disconnects
    socket.on('disconnect', () => {
